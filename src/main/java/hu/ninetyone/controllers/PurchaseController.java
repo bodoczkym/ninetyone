@@ -1,6 +1,7 @@
 package hu.ninetyone.controllers;
 
 import hu.ninetyone.entities.Purchase;
+import hu.ninetyone.entities.User;
 import hu.ninetyone.repositories.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -132,4 +133,32 @@ public class PurchaseController {
             return ResponseEntity.ok(list);
         }
     }*/
+
+   //get customer by purchase_id
+    @GetMapping("/customerBypurchaseId/{id}")
+    public ResponseEntity<User> getCustomerByPurchaseId(@PathVariable Integer id) {
+        Optional<Purchase> purchase = purchaseRepository.findById(id);
+        if (purchase.isPresent()) {
+            return ResponseEntity.ok(purchase.get().getUser());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    //get customers by product id
+    @GetMapping("/customersByproductId/{id}")
+    public ResponseEntity<Iterable<User>> getCustomersByProductId(@PathVariable Integer id) {
+        Iterable<Purchase> purchase = purchaseRepository.findAll();
+        List<User> list = new ArrayList<>();
+        for(Purchase p : purchase){
+            if(p.getProduct().getId().equals(id)){
+                list.add(p.getUser());
+            }
+        }
+        if(list.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }else{
+            return ResponseEntity.ok(list);
+        }
+    }
 }

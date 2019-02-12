@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface PurchaseRepository extends CrudRepository<Purchase, Integer> {
     List<Purchase> findAllByIsDelivered(Boolean b);
+    List<Purchase> findByProductId(Integer id);
 }

@@ -37,9 +37,9 @@ public class User implements Serializable {
             ROLE_OWNER, ROLE_USER
         }
 
-      /*  @ManyToMany(mappedBy = "user")
+        @OneToMany(mappedBy = "user")
         @JsonIgnore
-        private List<Purchase> purchase;*/
+        private List<Purchase> purchase;
 
 
 

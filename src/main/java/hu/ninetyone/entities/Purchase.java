@@ -11,6 +11,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -46,13 +47,13 @@ public class Purchase {
     @UpdateTimestamp
     private LocalDateTime updated_at;
 
-   /* @ManyToMany
+    @ManyToOne
     @JoinColumn
     @JsonIgnore
-    private User user;*/
+    private User user;
 
-   /* @ManyToOne
+    @ManyToOne
     @JoinColumn
     @JsonIgnore
-    private Product product;*/
+    private Product product;
 }

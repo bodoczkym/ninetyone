@@ -48,14 +48,14 @@ public class Product {
         @UpdateTimestamp
         private LocalDateTime updated_at;
 
-       /* @OneToMany(mappedBy = "product")
-        @JsonIgnore
-        private List<Purchase> purchase;
-
         @ManyToOne
         @JoinColumn
         @JsonIgnore
-        private Category category;//!!!INFO:itt es a Category mapjeben ugyanannak kell szerepelni*/
+        private Category category;//!!!INFO:itt es a Category mapjeben ugyanannak kell szerepelni
+
+        @OneToMany(mappedBy = "product")
+        @JsonIgnore
+        private List<Purchase> purchase;
 
 
 

@@ -35,7 +35,7 @@ public class Category {
     @UpdateTimestamp
     private LocalDateTime updated_at;
 
-   /* @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category")
     @JsonIgnore
-    private List<Product> products;*/
+    private List<Product> products;
 }
