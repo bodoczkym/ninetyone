@@ -37,6 +37,21 @@ public class User implements Serializable {
             ROLE_OWNER, ROLE_USER
         }
 
+        @Column(nullable = false)
+        private String reference;
+
+        @Column(nullable = false)
+        private String description;
+
+        @Column(nullable = true)
+        private int rate;
+
+        @Column(nullable = false)
+        private String img;
+
+        @Column(nullable = false)
+        private String email;
+
         @OneToMany(mappedBy = "user")
         @JsonIgnore
         private List<Purchase> purchase;

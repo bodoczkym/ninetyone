@@ -1,15 +1,15 @@
-insert into user(username, password, enabled, role) values (
-  'owner1', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_OWNER');
-insert into user(username, password, enabled, role) values (
-  'owner2', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_OWNER');
-insert into user(username, password, enabled, role) values (
-  'user1', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER');
-insert into user(username, password, enabled, role) values (
-  'owner3', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_OWNER');
-insert into user(username, password, enabled, role) values (
-  'user2', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER');
-insert into user(username, password, enabled, role) values (
-  'user3', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER');
+insert into user(username, password, enabled, role, reference, description, rate, img, email) values (
+  'owner1', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_OWNER', 'https://www.youtube.com/watch?v=YFXlzKDjL8E', 'He is sooo funny', 0, '/assets/images/img3.jpg', 'weirdo@ww.wwad');
+insert into user(username, password, enabled, role, reference, description, rate, img, email) values (
+  'owner2', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_OWNER', 'https://www.youtube.com/watch?v=YFXlzKDjL8E', 'He is sooo funnyHe is sooo funnyHe is sooo funnyHe is sooo funny', 1, '/assets/images/img2.jpg', 'asd@gmail.com');
+insert into user(username, password, enabled, role, reference, description, rate, img, email) values (
+  'user1', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER', 'https://www.youtube.com/watch?v=YFXlzKDjL8E', 'He is sooo funnyHe is sooo funnyHe is sooo funny', 2, '/assets/images/img3.jpg', 'asd@gmail.com');
+insert into user(username, password, enabled, role, reference, description, rate, img, email) values (
+  'owner3', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_OWNER', 'https://www.youtube.com/watch?v=YFXlzKDjL8E', 'He is sooo funnyjnfkj nfkjas gnjkasb gkadbgdkafhbghd fabghl fabgdjfbjad fljgkrskaljgbrjks ahlkjabgkl fdjagblkfdjabgl kdfajbgldkfagbl fdabl hdafbgkhbaed lghbrwlgbl krejabgraebgb.', 3, '/assets/images/imggith1.png', 'asd@gmail.com');
+insert into user(username, password, enabled, role, reference, description, rate, img, email) values (
+  'user2', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER', 'https://www.youtube.com/watch?v=YFXlzKDjL8E', 'He is sooo funnyjnfkj nfkjas gnjkasb gkadbgdkafhbghd fabghl fabgdjfbjad fljgkrskaljgbrjks ahlkjabgkl fdjagblkfdjabgl kdfajbgldkfagbl fdabl hdafbgkhbaed gkadbgdkafhbghd flgbl krejabgraebgb.', 4, '/assets/images/img3.jpg', 'asd@gmail.com');
+insert into user(username, password, enabled, role, reference, description, rate, img, email) values (
+  'user3', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER', 'https://www.youtube.com/watch?v=YFXlzKDjL8E', 'He is sooo funnyjnfkj nfkjas gnjkasb gkadbgdkafhbghd fabghl fabgdjfbjad fljgkrskaljgbrjks ahlkjabgkl fdjagblkfdjabgl kdfajbgldkfagbl fdabl hdafbgkhbaed lghbrwlgbl krejabgraebgb.', 5, '/assets/images/img3.jpg', 'asd@gmail.com');
 
 
 insert into category(category_name,created_at,updated_at) values
