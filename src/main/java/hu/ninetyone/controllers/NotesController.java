@@ -14,6 +14,8 @@ public class NotesController {
     @Autowired
     private NotesRepository notesRepository;
 
+
+
     @GetMapping("")
     public ResponseEntity<Iterable<Notes>> getAll() {
         return ResponseEntity.ok(notesRepository.findAll());

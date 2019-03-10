@@ -48,3 +48,8 @@ insert into notes ( name, text ) values ('Bela', 'Do the TODOs');
 insert into notes ( name, text ) values ('asf', 'I hope it will be a wonderful pagehope it will be a wonderful page hope it will be a wonderful page hope it will be a wonderful pagehope it will be a wonderful page');
 insert into notes ( name, text ) values ('ee', 'fffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffff');
 insert into notes ( name, text ) values ('zozu', 'I hope it will be a wonderful page');
+
+insert into job ( name, description ) values ('engineeringJob', 'hdmi hdmihdmi hd mihdmihdm i hdm');
+insert into job ( name, description ) values ('engineeringJob', 'hdmi hdmihdmi hd mihdmihdm i hdm dmi hdmihdmi hd mihdmihdm i hdm');
+insert into job ( name, description ) values ('projectManagemant', 'hdmi hdmihdmi hd mihdmihdm i hdm');
+insert into job ( name, description ) values ('projectManagemant', 'hdmi hdmihdmi hd mihdmihdm i hdm dmi hdmihdmi hd mihdmihdm i hdm');

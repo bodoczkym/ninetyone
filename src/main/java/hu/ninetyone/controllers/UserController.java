@@ -2,8 +2,10 @@ package hu.ninetyone.controllers;
 
 import hu.ninetyone.entities.User;
 import hu.ninetyone.repositories.UserRepository;
+import hu.ninetyone.security.AuthenticatedUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
@@ -13,6 +15,10 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    private AuthenticatedUser authenticatedUser;
 
     @GetMapping("")
     public ResponseEntity<Iterable<User>> getAll() {
@@ -29,37 +35,29 @@ public class UserController {
         }
     }
 
-   /* @GetMapping("/role/{role}")
-   /* public ResponseEntity<Iterable<User>> get(@PathVariable String role) {
-        if(role.equals("owner")){
-            Optional<User> user = userRepository.findByRole(User.Role.ROLE_OWNER);
-            if (user.isPresent()) {
-                return ResponseEntity.ok();
-            } else {
-                return ResponseEntity.notFound().build();
-            }
+    @PostMapping("register")
+    public ResponseEntity<User> register(@RequestBody User user) {
+        Optional<User> oUser = userRepository.findByUsername(user.getUsername());
+        if (oUser.isPresent()) {
+            return ResponseEntity.badRequest().build();
         }
-        else if(role.equals("user")){
-            Optional<User> user = userRepository.findByRole(User.Role.ROLE_USER);
-            if (user.isPresent()) {
-                return ResponseEntity.ok(userRepository.findAll());
-            } else {
-                return ResponseEntity.notFound().build();
-            }
-        }
-        return ResponseEntity.notFound().build();
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(true);
+        user.setRole(User.Role.ROLE_USER);
+        return ResponseEntity.ok(userRepository.save(user));
     }
-   public ResponseEntity<User> getRole(@PathVariable String role){
-     /*  Iterable<User> user = userRepository.findAll();
-       List<User> list = new ArrayList<>();
 
-       for(User u : user){
-           if(u){
-               list.add(u);
-           }
-       }
-    }*/
+    @PostMapping("login")
+    public ResponseEntity<User> login(@RequestBody User user) {
+        return ResponseEntity.ok(authenticatedUser.getUser());
+    }
 
+
+
+
+
+/**
+    // TODO: employee can add new employee /
     @PostMapping("")
     public ResponseEntity<User> post(@RequestBody User user) {
         User savedUser = userRepository.save(user);
@@ -86,6 +84,6 @@ public class UserController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 
 }

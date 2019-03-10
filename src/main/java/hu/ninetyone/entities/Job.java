@@ -1,27 +1,29 @@
 package hu.ninetyone.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.io.Serializable;
-import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Notes implements Serializable {
+public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column()
+    @Column
+    @NotNull
     private String name;
 
-    @Column(nullable = false, length = 301)
-    private String text;
+    @Column
+    @NotNull
+    private String description;
+
 }

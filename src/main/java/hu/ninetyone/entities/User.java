@@ -29,7 +29,7 @@ public class User implements Serializable {
         @Column(nullable = false)
         private boolean enabled;
 
-        @Column
+        @Column(nullable = false)
         @Enumerated(EnumType.STRING)
         private Role role;
 
@@ -37,19 +37,19 @@ public class User implements Serializable {
             ROLE_OWNER, ROLE_USER
         }
 
-        @Column(nullable = false)
+        @Column(nullable = true)
         private String reference;
 
-        @Column(nullable = false)
+        @Column(nullable = true)
         private String description;
 
         @Column(nullable = true)
         private int rate;
 
-        @Column(nullable = false)
+        @Column(nullable = true)
         private String img;
 
-        @Column(nullable = false)
+        @Column(nullable = true)
         private String email;
 
         @OneToMany(mappedBy = "user")
