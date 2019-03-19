@@ -1,6 +1,7 @@
 package hu.ninetyone.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import hu.ninetyone.entities.Products.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -56,4 +57,30 @@ public class Purchase {
     @JoinColumn
     @JsonIgnore
     private Product product;
+
+    /* real products */
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    private Bathroom bath;
+
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    private Bedroom bed;
+
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    private Kitchen kitchen;
+
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    private Livingroom living;
+
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    private Techs techs;
 }

@@ -36,10 +36,10 @@ public class Product {
         @NotNull
         private String description;
 
+
         @Column
         @NotNull
         private int price;
-
         @Column
         @CreationTimestamp
         private LocalDateTime created_at;

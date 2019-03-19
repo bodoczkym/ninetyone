@@ -1,6 +1,7 @@
 package hu.ninetyone.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import hu.ninetyone.entities.Products.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -38,4 +39,24 @@ public class Category {
     @OneToMany(mappedBy = "category")
     @JsonIgnore
     private List<Product> products;
+
+    @OneToMany(mappedBy = "category")
+    @JsonIgnore
+    private List<Bathroom> bath;
+
+    @OneToMany(mappedBy = "category")
+    @JsonIgnore
+    private List<Bedroom> bed;
+
+    @OneToMany(mappedBy = "category")
+    @JsonIgnore
+    private List<Kitchen> kitchen;
+
+    @OneToMany(mappedBy = "category")
+    @JsonIgnore
+    private List<Livingroom> living;
+
+    @OneToMany(mappedBy = "category")
+    @JsonIgnore
+    private List<Techs> techs;
 }

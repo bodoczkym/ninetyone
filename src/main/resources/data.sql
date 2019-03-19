@@ -90,3 +90,18 @@ insert into question ( name, question, description ) values ( 'Komamasszony', 'H
 insert into comment (  q_id, comment, comment_name ) values ( '1', 'is it a comment?', 'sandee');
 insert into comment (  q_id, comment, comment_name ) values ( '2', 'is it a comment1?', 'sandee');
 insert into comment (  q_id, comment, comment_name ) values ( '1', 'is it a comment2?', 'sandee');
+
+
+insert into bedroom(category_id, name, stocknumber, filters, description, rate, img, price, created_at, updated_at) values
+  (1, 'bed product1', 111, 'cupboard:nightstand' , 'description1', 5, '/assets/images/img3.jpg', 3000, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bedroom(category_id, name, stocknumber, filters, description, rate, img, price, created_at, updated_at) values
+  (2, 'bed product2', 112, 'cupboard', 'description1', 5, '/assets/images/img3.jpg', 3000, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bedroom(category_id, name, stocknumber, filters, description, rate, img, price, created_at, updated_at) values
+  (1, 'bed product3', 113, 'cupboard', 'description1', 5, '/assets/images/img3.jpg', 3000, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bedroom(category_id, name, stocknumber, filters, description, rate, img, price, created_at, updated_at) values
+  (3, 'bed product4', 114,  'cupboard', 'description1', 5, '/assets/images/img3.jpg', 3000, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bedroom(category_id, name, stocknumber, filters, description, rate, img, price, created_at, updated_at) values
+  (3, 'bed product5', 115, 'cupboard', 'description1', 5, '/assets/images/img3.jpg', 3000, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bedroom(category_id, name, stocknumber, filters, description, rate, img, price, created_at, updated_at) values
+  (2, 'bed product6', 116, 'cupboard:bed', 'description1', 5, '/assets/images/img3.jpg', 3000, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
