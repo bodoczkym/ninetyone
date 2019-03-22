@@ -58,6 +58,9 @@ public class Bedroom implements Serializable {
     @Column(nullable = true)
     private int rate;
 
+    @Column(nullable = false)
+    private String type;
+
     @Column(nullable = true)
     private String img;
 
