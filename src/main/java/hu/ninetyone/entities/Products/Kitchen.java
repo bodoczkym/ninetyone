@@ -34,8 +34,7 @@ public class Kitchen implements Serializable {
     private Integer stocknumber;
 
     @Column(nullable = false)
-    @OneToMany(targetEntity=Kitchen.class)
-    private List<String> filters = Arrays.asList("table", "chair", "desk", "countertops", "serving cupboard");
+    private String filters;
 
     private enum TableType {
         wood, metal, plastic
@@ -50,6 +49,9 @@ public class Kitchen implements Serializable {
 
     @Column(nullable = true)
     private int rate;
+
+    @Column(nullable = false)
+    private String type;
 
     @Column(nullable = true)
     private String img;

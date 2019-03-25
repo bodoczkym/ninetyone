@@ -34,9 +34,7 @@ public class Techs implements Serializable {
     private Integer stocknumber;
 
     @Column(nullable = false)
-    @OneToMany(targetEntity=Techs.class)
-    private List<String> filters = Arrays.asList("oven", "washing machine", "microwave", "refrigerator",
-             "chest freezer", "television");
+    private String filters;
 
     private enum OvenType {
         with_hot_plate, without_hot_plate
@@ -51,6 +49,9 @@ public class Techs implements Serializable {
 
     @Column(nullable = true)
     private int rate;
+
+    @Column(nullable = false)
+    private String type;
 
     @Column(nullable = true)
     private String img;

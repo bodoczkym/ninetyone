@@ -27,9 +27,9 @@ public class BathroomController {
         return ResponseEntity.ok(bathroomRepository.findAll());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Bathroom> get(@PathVariable Integer id) {
-        Optional<Bathroom> bathroom = bathroomRepository.findById(id);
+    @GetMapping("/{stocknumber}")
+    public ResponseEntity<Bathroom> getByStockNumber(@PathVariable Integer stocknumber) {
+        Optional<Bathroom> bathroom = bathroomRepository.findByStocknumber(stocknumber);
         if (bathroom.isPresent()) {
             return ResponseEntity.ok(bathroom.get());
         } else {

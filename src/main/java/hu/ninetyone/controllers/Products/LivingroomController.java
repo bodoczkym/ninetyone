@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/livingroom")
+@RequestMapping("/living-room")
 public class LivingroomController {
     @Autowired
     private CategoryRepository categoryRepository;
@@ -30,11 +30,11 @@ public class LivingroomController {
         return ResponseEntity.ok(livingroomRepository.findAll());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Livingroom> get(@PathVariable Integer id) {
-        Optional<Livingroom> living = livingroomRepository.findById(id);
-        if (living.isPresent()) {
-            return ResponseEntity.ok(living.get());
+    @GetMapping("/{stocknumber}")
+    public ResponseEntity<Livingroom> getByStockNumber(@PathVariable Integer stocknumber) {
+        Optional<Livingroom> livingroom = livingroomRepository.findByStocknumber(stocknumber);
+        if (livingroom.isPresent()) {
+            return ResponseEntity.ok(livingroom.get());
         } else {
             return ResponseEntity.notFound().build();
         }

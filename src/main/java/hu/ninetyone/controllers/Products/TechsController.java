@@ -27,9 +27,9 @@ public class TechsController {
         return ResponseEntity.ok(techsRepository.findAll());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Techs> get(@PathVariable Integer id) {
-        Optional<Techs> techs = techsRepository.findById(id);
+    @GetMapping("/{stocknumber}")
+    public ResponseEntity<Techs> getByStockNumber(@PathVariable Integer stocknumber) {
+        Optional<Techs> techs = techsRepository.findByStocknumber(stocknumber);
         if (techs.isPresent()) {
             return ResponseEntity.ok(techs.get());
         } else {

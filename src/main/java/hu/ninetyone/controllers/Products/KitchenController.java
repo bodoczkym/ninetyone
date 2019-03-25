@@ -28,9 +28,9 @@ public class KitchenController {
         return ResponseEntity.ok(kitchenRepository.findAll());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Kitchen> get(@PathVariable Integer id) {
-        Optional<Kitchen> kitchen = kitchenRepository.findById(id);
+    @GetMapping("/{stocknumber}")
+    public ResponseEntity<Kitchen> getByStockNumber(@PathVariable Integer stocknumber) {
+        Optional<Kitchen> kitchen = kitchenRepository.findByStocknumber(stocknumber);
         if (kitchen.isPresent()) {
             return ResponseEntity.ok(kitchen.get());
         } else {

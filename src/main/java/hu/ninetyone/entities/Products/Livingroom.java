@@ -34,9 +34,7 @@ public class Livingroom implements Serializable {
     private Integer stocknumber;
 
     @Column(nullable = false)
-    @OneToMany(targetEntity=Livingroom.class)
-    private List<String> filters = Arrays.asList("couch", "armchair", "smoking table", "tv table", "cabinet",
-             "cupboard");
+    private String filters;
 
     private enum TableType {
         wood, metal, plastic
@@ -51,6 +49,9 @@ public class Livingroom implements Serializable {
 
     @Column(nullable = true)
     private int rate;
+
+    @Column(nullable = false)
+    private String type;
 
     @Column(nullable = true)
     private String img;

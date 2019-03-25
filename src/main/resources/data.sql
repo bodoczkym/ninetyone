@@ -63,10 +63,9 @@ insert into notes ( name, text ) values ('Karcsi', 'I hope it will be a wonderfu
 insert into notes ( name, text ) values ('Bela', 'Do the TODOs');
 insert into notes ( name, text ) values ('asf', 'I hope it will be a wonderful pagehope it will be a wonderful page' ||
  '   hope it will be a wonderful page hope it will be a wonderful pagehope it will be a wonderful page');
-insert into notes ( name, text ) values ('ee', 'fffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafad' ||
- 'fdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsd' ||
-  'fsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdfffffffffffffffaasdasdafafadfdfsdfsdffff' ||
-   'fffffff');
+insert into notes ( name, text ) values ('ee', 'untur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque' ||
+ 'porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eiu ' ||
+  's modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nos');
 insert into notes ( name, text ) values ('zozu', 'I hope it will be a wonderful page');
 
 
@@ -104,4 +103,92 @@ insert into bedroom(category_id, name, stocknumber, filters, description, rate, 
   (3, 'bed product5', 115, 'cupboard', 'description1', 5,  'bedroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 insert into bedroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
   (2, 'bed product6', 116, 'cupboard:bed', 'description1', 5, 'bedroom', '/assets/images/img3.jpg', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+
+insert into livingroom(category_id, name, stocknumber, filters, description, rate, type, img, price, created_at, updated_at) values
+  (1, 'table', 111, 'table' , 'dautem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestia' ||
+   'e consequatur, vel illum qui dolorem eum fugiat quo voluptaescription1', 5,  'livingroom', '/assets/images/img3.jpg',
+   3500, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into livingroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'little table', 112, 'table', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ull' ||
+   'am corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'livingroom', '/assets/images/img3.jpg',
+    999, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into livingroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (1, 'sofa', 113, 'sofa:armchair', 'description1', 5,  'livingroom', '/assets/images/img3.jpg', 700, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into livingroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'armchair', 114,  'armchair', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem u' ||
+   'llam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'livingroom', '/assets/images/img3.jpg',
+    260, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into livingroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'armchair', 115, 'armchair', 'description1', 5,  'livingroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into livingroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'pl', 116, 'armchair', 'description1', 5,  'livingroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into livingroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'pl2', 117, 'armchair', 'description1', 5,  'livingroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+
+insert into bathroom(category_id, name, stocknumber, filters, description, rate, type, img, price, created_at, updated_at) values
+  (1, 'mirror', 111, 'mirror' , 'dautem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestia' ||
+   'e consequatur, vel illum qui dolorem eum fugiat quo voluptaescription1', 5,  'bathroom', '/assets/images/img3.jpg',
+   3500, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bathroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'sink', 112, 'sink:bath', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ull' ||
+   'am corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'bathroom', '/assets/images/img3.jpg',
+    999, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bathroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (1, 'sink', 113, 'sink', 'description1', 5,  'bathroom', '/assets/images/img3.jpg', 700, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bathroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'mirror', 114,  'mirror', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem u' ||
+   'llam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'bathroom', '/assets/images/img3.jpg',
+    260, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bathroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'bath', 115, 'bath:bathtub', 'description1', 5,  'bathroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bathroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'bathtub', 116, 'bathtub:bath', 'description1', 5,  'bathroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into bathroom(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'sink', 117, 'sink', 'description1', 5,  'bathroom', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+insert into kitchen(category_id, name, stocknumber, filters, description, rate, type, img, price, created_at, updated_at) values
+  (1, 'table', 111, 'table' , 'dautem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestia' ||
+   'e consequatur, vel illum qui dolorem eum fugiat quo voluptaescription1', 5,  'kitchen', '/assets/images/img3.jpg',
+   3500, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into kitchen(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'serving table', 112, 'serving table:table', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ull' ||
+   'am corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'kitchen', '/assets/images/img3.jpg',
+    999, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into kitchen(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (1, 'desk', 113, 'desk:serving table', 'description1', 5,  'kitchen', '/assets/images/img3.jpg', 700, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into kitchen(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'mirror', 114,  'mirror', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem u' ||
+   'llam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'kitchen', '/assets/images/img3.jpg',
+    260, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into kitchen(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'table and chairs', 115, 'table:chair', 'description1', 5,  'kitchen', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into kitchen(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'chairs', 116, 'chair', 'description1', 5,  'kitchen', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into kitchen(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'table', 117, 'table', 'description1', 5,  'kitchen', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+insert into techs(category_id, name, stocknumber, filters, description, rate, type, img, price, created_at, updated_at) values
+  (1, 'tv', 111, 'tv' , 'dautem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestia' ||
+   'e consequatur, vel illum qui dolorem eum fugiat quo voluptaescription1', 5,  'techs', '/assets/images/img3.jpg',
+   3500, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into techs(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'refigerator', 112, 'refigerator', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ull' ||
+   'am corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'techs', '/assets/images/img3.jpg',
+    999, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into techs(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (1, 'freezer', 113, 'refigerator:freezer', 'description1', 5,  'techs', '/assets/images/img3.jpg', 700, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into techs(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'refigerator', 114,  'refigerator', 'm quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem u' ||
+   'llam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur', 5,  'techs', '/assets/images/img3.jpg',
+    260, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into techs(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'microwave', 115, 'microwave', 'description1', 5,  'techs', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into techs(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (2, 'oven', 116, 'oven', 'description1', 5,  'techs', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into techs(category_id, name, stocknumber, filters, description, rate,  type, img, price, created_at, updated_at) values
+  (3, 'oven', 117, 'oven', 'description1', 5,  'techs', '/assets/images/img3.jpg', 3499, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+
+
 

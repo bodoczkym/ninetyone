@@ -35,15 +35,16 @@ public class Bathroom implements Serializable {
     private Integer stocknumber;
 
     @Column(nullable = false)
-    @OneToMany(targetEntity=Bathroom.class)
-    private List<String> filters = Arrays.asList("bath", "bathtub", "sink", "bathroom cabinet", "cabinet", "wc",
-            "toilet", "towel-rail", "mirror");
+    private String filters;
 
     @Column(nullable = true)
     private String description;
 
     @Column(nullable = true)
     private int rate;
+
+    @Column(nullable = false)
+    private String type;
 
     @Column(nullable = true)
     private String img;
