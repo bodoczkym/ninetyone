@@ -61,12 +61,14 @@ public class BathroomController {
         return ResponseEntity.ok(savedBath);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Bathroom> update(@PathVariable Integer id,
+    @PutMapping("/{stocknumber}")
+    public ResponseEntity<Bathroom> update(@PathVariable Integer stocknumber,
                                            @RequestBody Bathroom bathroom) {
-        Optional<Bathroom> optBathroom = bathroomRepository.findById(id);
+        Optional<Bathroom> optBathroom = bathroomRepository.findByStocknumber(stocknumber);
         if (optBathroom.isPresent()) {
-            bathroom.setId(id);
+            bathroom.setCategory(bathroom.getCategory());
+            bathroom.setCreated_at(bathroom.getCreated_at());
+            bathroom.setUpdated_at(bathroom.getUpdated_at());
             return ResponseEntity.ok(bathroomRepository.save(bathroom));
         } else {
             return ResponseEntity.notFound().build();

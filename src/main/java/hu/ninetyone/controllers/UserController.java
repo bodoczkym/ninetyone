@@ -5,6 +5,7 @@ import hu.ninetyone.repositories.UserRepository;
 import hu.ninetyone.security.AuthenticatedUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
@@ -52,7 +53,17 @@ public class UserController {
         return ResponseEntity.ok(authenticatedUser.getUser());
     }
 
-
+    @PutMapping("")
+    public ResponseEntity<User> update(@RequestBody User user) {
+        Optional<User> optUser = userRepository.findByUsername(user.getUsername());
+        if (optUser.isPresent()) {
+            user.setRates(user.getRates());
+            user.setVoters(user.getVoters());
+            return ResponseEntity.ok(userRepository.save(user));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
 

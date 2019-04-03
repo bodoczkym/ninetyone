@@ -71,12 +71,12 @@ public class BedroomController {
         return ResponseEntity.ok(savedBed);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Bedroom> update(@PathVariable Integer id,
+    @PutMapping("/{stocknumber}")
+    public ResponseEntity<Bedroom> update(@PathVariable Integer stocknumber,
                                            @RequestBody Bedroom bedroom) {
-        Optional<Bedroom> optBedhroom = bedroomRepository.findById(id);
-        if (optBedhroom.isPresent()) {
-            bedroom.setId(id);
+        Optional<Bedroom> optBedroom = bedroomRepository.findByStocknumber(stocknumber);
+        if (optBedroom.isPresent()) {
+            bedroom.setName(bedroom.getName());
             return ResponseEntity.ok(bedroomRepository.save(bedroom));
         } else {
             return ResponseEntity.notFound().build();

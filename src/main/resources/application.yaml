@@ -1,0 +1,61 @@
+
+# we set explicitly the database engine
+#spring.datasource.platform=h2
+
+# make the h2 web console enabled
+#spring.h2.console.enabled=true
+
+# the path for the h2 web console
+#spring.h2.console.path=/h2
+
+# we can change the name of the database, in this case it will be called `mydb`
+#spring.datasource.url=jdbc:h2:mem:mydb
+
+#show sql statement
+#logging.level.org.hibernate.SQL=debug
+
+#show sql values
+#logging.level.org.hibernate.type.descriptor.sql=trace
+# Loco yaml export: Simple YAML object
+# Project: application.properties conversion
+# Release: Working copy
+# Locale: en-HU, English (Hungary)
+# Exported by: Unregistered user
+# Exported at: Wed, 27 Mar 2019 21:14:14 +0100
+# Loco yaml export: Simple YAML object
+# Project: h.properties conversion
+# Release: Working copy
+# Locale: en-HU, English (Hungary)
+# Exported by: Unregistered user
+# Exported at: Mon, 01 Apr 2019 15:05:47 +0200
+---
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/ninetyOneDB
+        username: sandee
+        password: f0rMyTh3sis77
+        driver-class-name: com.mysql.jdbc.Driver
+
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    security:
+      oauth2:
+        client:
+          clientId: 435668117308-7accdukaf5ee3j625n10ilh67stlt0mm.apps.googleusercontent.com
+          clientSecret: ZJ94TD-3Q1Z4PQWAN6sH8EtI
+          accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+          userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+          clientAuthenticationScheme: form
+          scope:
+            - openid
+            - email
+            - profile
+        resource:
+          userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+          preferTokenInfo: true

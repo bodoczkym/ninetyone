@@ -5,10 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Id;
 
 @Entity
 @Data
@@ -20,9 +20,10 @@ public class User implements Serializable {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
 
-        @Column(unique = true)
+        @Column(unique = true, nullable = false)
         private String username;
 
+        @JsonIgnore
         @Column(nullable = false)
         private String password;
 
@@ -44,18 +45,22 @@ public class User implements Serializable {
         private String description;
 
         @Column(nullable = true)
-        private int rate;
+        private int rates;
+
+        @Column(nullable = true)
+        private int voters;
 
         @Column(nullable = true)
         private String img;
 
-        @Column(nullable = true)
+        @Column(nullable = false)
         private String email;
+
+        @Column(nullable = false)
+        private Boolean emailVerified = false;
 
         @OneToMany(mappedBy = "user")
         @JsonIgnore
         private List<Purchase> purchase;
-
-
 
 }
