@@ -27,11 +27,17 @@ public class BathroomController {
         return ResponseEntity.ok(bathroomRepository.findAll());
     }
 
-    @GetMapping("/{stocknumber}")
-    public ResponseEntity<Bathroom> getByStockNumber(@PathVariable Integer stocknumber) {
-        Optional<Bathroom> bathroom = bathroomRepository.findByStocknumber(stocknumber);
-        if (bathroom.isPresent()) {
-            return ResponseEntity.ok(bathroom.get());
+    @GetMapping("/{id}")
+    public ResponseEntity<Bathroom> getById(@PathVariable Integer id) {
+        /*Optional<Bedroom> bedroom = bedroomRepository.findByStocknumber(stocknumber);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }*/
+        Optional<Bathroom> bedroom = bathroomRepository.findById(id);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
         } else {
             return ResponseEntity.notFound().build();
         }

@@ -27,16 +27,21 @@ public class TechsController {
         return ResponseEntity.ok(techsRepository.findAll());
     }
 
-    @GetMapping("/{stocknumber}")
-    public ResponseEntity<Techs> getByStockNumber(@PathVariable Integer stocknumber) {
-        Optional<Techs> techs = techsRepository.findByStocknumber(stocknumber);
-        if (techs.isPresent()) {
-            return ResponseEntity.ok(techs.get());
+    @GetMapping("/{id}")
+    public ResponseEntity<Techs> getById(@PathVariable Integer id) {
+        /*Optional<Bedroom> bedroom = bedroomRepository.findByStocknumber(stocknumber);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }*/
+        Optional<Techs> bedroom = techsRepository.findById(id);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-
     //A kategóriát kiválasztva listázódnak a tételek (név és ár kíséretében),
     //amelyek szűrhetőek név(részlet)re
    /* @GetMapping("/{id}/products")

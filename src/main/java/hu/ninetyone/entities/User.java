@@ -35,7 +35,7 @@ public class User implements Serializable {
         private Role role;
 
         public enum Role {
-            ROLE_OWNER, ROLE_USER
+            ROLE_OWNER, ROLE_USER, GUEST
         }
 
         @Column(nullable = true)

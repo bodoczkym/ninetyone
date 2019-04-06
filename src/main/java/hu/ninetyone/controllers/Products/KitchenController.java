@@ -28,11 +28,17 @@ public class KitchenController {
         return ResponseEntity.ok(kitchenRepository.findAll());
     }
 
-    @GetMapping("/{stocknumber}")
-    public ResponseEntity<Kitchen> getByStockNumber(@PathVariable Integer stocknumber) {
-        Optional<Kitchen> kitchen = kitchenRepository.findByStocknumber(stocknumber);
-        if (kitchen.isPresent()) {
-            return ResponseEntity.ok(kitchen.get());
+    @GetMapping("/{id}")
+    public ResponseEntity<Kitchen> getById(@PathVariable Integer id) {
+        /*Optional<Bedroom> bedroom = bedroomRepository.findByStocknumber(stocknumber);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }*/
+        Optional<Kitchen> bedroom = kitchenRepository.findById(id);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
         } else {
             return ResponseEntity.notFound().build();
         }

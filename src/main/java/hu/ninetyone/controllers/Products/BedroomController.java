@@ -37,9 +37,15 @@ public class BedroomController {
         }
     }*/
 
-    @GetMapping("/{stocknumber}")
-    public ResponseEntity<Bedroom> getByStockNumber(@PathVariable Integer stocknumber) {
-        Optional<Bedroom> bedroom = bedroomRepository.findByStocknumber(stocknumber);
+    @GetMapping("/{id}")
+    public ResponseEntity<Bedroom> getById(@PathVariable Integer id) {
+        /*Optional<Bedroom> bedroom = bedroomRepository.findByStocknumber(stocknumber);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }*/
+        Optional<Bedroom> bedroom = bedroomRepository.findById(id);
         if (bedroom.isPresent()) {
             return ResponseEntity.ok(bedroom.get());
         } else {
@@ -71,12 +77,13 @@ public class BedroomController {
         return ResponseEntity.ok(savedBed);
     }
 
-    @PutMapping("/{stocknumber}")
-    public ResponseEntity<Bedroom> update(@PathVariable Integer stocknumber,
+    @PutMapping("/{id}")
+    public ResponseEntity<Bedroom> update(@PathVariable Integer id,
                                            @RequestBody Bedroom bedroom) {
-        Optional<Bedroom> optBedroom = bedroomRepository.findByStocknumber(stocknumber);
+        System.out.println("DDDDD" + bedroom);
+        Optional<Bedroom> optBedroom = bedroomRepository.findById(id);
         if (optBedroom.isPresent()) {
-            bedroom.setName(bedroom.getName());
+            bedroom.setId(id);
             return ResponseEntity.ok(bedroomRepository.save(bedroom));
         } else {
             return ResponseEntity.notFound().build();

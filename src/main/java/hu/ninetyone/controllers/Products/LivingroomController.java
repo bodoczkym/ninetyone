@@ -30,16 +30,21 @@ public class LivingroomController {
         return ResponseEntity.ok(livingroomRepository.findAll());
     }
 
-    @GetMapping("/{stocknumber}")
-    public ResponseEntity<Livingroom> getByStockNumber(@PathVariable Integer stocknumber) {
-        Optional<Livingroom> livingroom = livingroomRepository.findByStocknumber(stocknumber);
-        if (livingroom.isPresent()) {
-            return ResponseEntity.ok(livingroom.get());
+    @GetMapping("/{id}")
+    public ResponseEntity<Livingroom> getById(@PathVariable Integer id) {
+        /*Optional<Bedroom> bedroom = bedroomRepository.findByStocknumber(stocknumber);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }*/
+        Optional<Livingroom> bedroom = livingroomRepository.findById(id);
+        if (bedroom.isPresent()) {
+            return ResponseEntity.ok(bedroom.get());
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-
     //A kategóriát kiválasztva listázódnak a tételek (név és ár kíséretében),
     //amelyek szűrhetőek név(részlet)re
    /* @GetMapping("/{id}/products")
