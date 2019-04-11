@@ -73,8 +73,5 @@ public class Livingroom implements Serializable {
     @JsonIgnore
     private Category category;
 
-    @OneToMany(mappedBy = "living")
-    @JsonIgnore
-    private List<Purchase> purchase;
 
 }

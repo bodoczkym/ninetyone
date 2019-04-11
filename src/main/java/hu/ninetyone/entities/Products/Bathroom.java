@@ -66,8 +66,6 @@ public class Bathroom implements Serializable {
     @JsonIgnore
     private Category category;//!!!INFO:itt es a Category mapjeben ugyanannak kell szerepelni
 
-    @OneToMany(mappedBy = "bath")
-    @JsonIgnore
-    private List<Purchase> purchase;
+
 
 }

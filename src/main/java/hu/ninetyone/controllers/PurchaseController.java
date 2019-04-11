@@ -24,13 +24,8 @@ public class PurchaseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Purchase> get(@PathVariable Integer id) {
-        Optional<Purchase> purchase = purchaseRepository.findById(id);
-        if (purchase.isPresent()) {
-            return ResponseEntity.ok(purchase.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public List<Purchase> get(@PathVariable Integer id) {
+        return purchaseRepository.findAllByUser(id);
     }
 
     @PostMapping("")
@@ -60,7 +55,7 @@ public class PurchaseController {
             return ResponseEntity.notFound().build();
         }
     }
-
+/*
     @PutMapping("/takePurchaseDelivered/{id}")
     public ResponseEntity<Purchase> takePurchaseDelivered (@PathVariable Integer id) {
         Optional<Purchase> oPurchase = purchaseRepository.findById(id);
@@ -71,7 +66,8 @@ public class PurchaseController {
         }
         return ResponseEntity.notFound().build();
     }
-
+*/
+/*
     @GetMapping("/isDelivered")
     public ResponseEntity<List<Purchase>> isDelivered() {
         Iterable<Purchase> purchase = purchaseRepository.findAll();
@@ -87,7 +83,7 @@ public class PurchaseController {
             return ResponseEntity.ok(list);
         }
     }
-
+*/
    /* @GetMapping("/isDelivered/{id}")
     public ResponseEntity<List<Purchase>> isDeliveredId(@PathVariable Integer id) {
         Optional<Purchase> oPurchase = purchaseRepository.findById(id);
@@ -102,7 +98,7 @@ public class PurchaseController {
             return ResponseEntity.ok(list);
         }
     }*/
-
+/*
     @GetMapping("/isNotDelivered")
     public ResponseEntity<Iterable<Purchase>> isNotDelivered() {
         Iterable<Purchase> purchase = purchaseRepository.findAll();
@@ -118,7 +114,7 @@ public class PurchaseController {
             return ResponseEntity.ok(list);
         }
     }
-
+*/
    /* @GetMapping("/isNotDelivered/{id}")
     public ResponseEntity<Iterable<Purchase>> isNotDeliveredById(
             @PathVariable Integer id) {
@@ -134,7 +130,7 @@ public class PurchaseController {
             return ResponseEntity.ok(list);
         }
     }*/
-
+/*
    //get customer by purchase_id
     @GetMapping("/customerBypurchaseId/{id}")
     public ResponseEntity<User> getCustomerByPurchaseId(@PathVariable Integer id) {
@@ -144,8 +140,8 @@ public class PurchaseController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
-
+    }*/
+/*
     //get customers by product id
     @GetMapping("/customersByproductId/{id}")
     public ResponseEntity<Iterable<User>> getCustomersByProductId(@PathVariable Integer id) {
@@ -161,5 +157,5 @@ public class PurchaseController {
         }else{
             return ResponseEntity.ok(list);
         }
-    }
+    }*/
 }

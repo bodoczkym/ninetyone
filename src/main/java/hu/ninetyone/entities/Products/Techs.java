@@ -73,8 +73,5 @@ public class Techs implements Serializable {
     @JsonIgnore
     private Category category;
 
-    @OneToMany(mappedBy = "techs")
-    @JsonIgnore
-    private List<Purchase> purchase;
 
 }

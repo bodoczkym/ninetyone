@@ -1,6 +1,7 @@
 package hu.ninetyone.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import hu.ninetyone.entities.Products.Bedroom;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -58,9 +59,4 @@ public class User implements Serializable {
 
         @Column(nullable = false)
         private Boolean emailVerified = false;
-
-        @OneToMany(mappedBy = "user")
-        @JsonIgnore
-        private List<Purchase> purchase;
-
 }

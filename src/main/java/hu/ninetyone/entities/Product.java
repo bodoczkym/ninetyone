@@ -36,10 +36,10 @@ public class Product {
         @NotNull
         private String description;
 
-
         @Column
         @NotNull
         private int price;
+
         @Column
         @CreationTimestamp
         private LocalDateTime created_at;
@@ -52,10 +52,6 @@ public class Product {
         @JoinColumn
         @JsonIgnore
         private Category category;//!!!INFO:itt es a Category mapjeben ugyanannak kell szerepelni
-
-        @OneToMany(mappedBy = "product")
-        @JsonIgnore
-        private List<Purchase> purchase;
 
 
 

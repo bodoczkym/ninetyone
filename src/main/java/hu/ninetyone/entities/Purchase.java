@@ -1,6 +1,7 @@
 package hu.ninetyone.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.Nullable;
 import hu.ninetyone.entities.Products.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,61 +27,27 @@ public class Purchase {
 
     @Column
     @NotNull
-    private String order_name;
+    private Integer user;
 
     @Column
     @NotNull
-    private String address;
+    private Integer productId;
 
     @Column
     @NotNull
-    private String phone_number;
-
+    private String productType;
+/*
     @Column
     @NotNull
-    private boolean isDelivered;
+    private boolean isDelivered;*/
 
     @Column
     @CreationTimestamp
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
     @Column
     @UpdateTimestamp
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private User user;
 
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Product product;
-
-    /* real products */
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Bathroom bath;
-
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Bedroom bed;
-
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Kitchen kitchen;
-
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Livingroom living;
-
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Techs techs;
 }
