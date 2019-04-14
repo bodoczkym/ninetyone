@@ -53,12 +53,14 @@ public class UserController {
         return ResponseEntity.ok(authenticatedUser.getUser());
     }
 
-    @PutMapping("")
-    public ResponseEntity<User> update(@RequestBody User user) {
-        Optional<User> optUser = userRepository.findByUsername(user.getUsername());
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> update(@PathVariable Integer id,
+                                             @RequestBody User user) {
+        Optional<User> optUser = userRepository.findById(id);
         if (optUser.isPresent()) {
-            user.setRates(user.getRates());
-            user.setVoters(user.getVoters());
+            user.setPassword(optUser.get().getPassword());
+            user.setId(id);
             return ResponseEntity.ok(userRepository.save(user));
         } else {
             return ResponseEntity.notFound().build();
