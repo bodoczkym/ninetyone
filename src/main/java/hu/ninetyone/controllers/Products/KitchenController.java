@@ -70,11 +70,11 @@ public class KitchenController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Kitchen> update(@PathVariable Integer id,
-                                          @RequestBody Kitchen kitchen) {
-        Optional<Kitchen> optKitchen = kitchenRepository.findById(id);
-        if (optKitchen.isPresent()) {
-            kitchen.setId(id);
-            return ResponseEntity.ok(kitchenRepository.save(kitchen));
+                                           @RequestBody Kitchen bathroom) {
+        Optional<Kitchen> optBathroom = kitchenRepository.findById(id);
+        if (optBathroom.isPresent()) {
+            bathroom.setId(id);
+            return ResponseEntity.ok(kitchenRepository.save(bathroom));
         } else {
             return ResponseEntity.notFound().build();
         }

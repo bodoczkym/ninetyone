@@ -1,6 +1,7 @@
 package hu.ninetyone.entities.Products;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.Nullable;
 import hu.ninetyone.entities.Category;
 import hu.ninetyone.entities.Purchase;
 import lombok.AllArgsConstructor;
@@ -41,7 +42,11 @@ public class Bathroom implements Serializable {
     private String description;
 
     @Column(nullable = true)
-    private int rate;
+    private Integer voters;
+
+    @Column(nullable = true)
+    private Integer rate;
+
 
     @Column(nullable = false)
     private String type;
@@ -51,7 +56,13 @@ public class Bathroom implements Serializable {
 
     @Column
     @NotNull
-    private int price;
+    private Integer price;
+
+    @Column(nullable = true)
+    private Integer quantity;
+
+    @Column(nullable = true)
+    private Integer inCart;
 
     @Column
     @CreationTimestamp

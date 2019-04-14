@@ -68,11 +68,11 @@ public class TechsController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Techs> update(@PathVariable Integer id,
-                                             @RequestBody Techs techs) {
-        Optional<Techs> optTechs = techsRepository.findById(id);
-        if (optTechs.isPresent()) {
-            techs.setId(id);
-            return ResponseEntity.ok(techsRepository.save(techs));
+                                           @RequestBody Techs bathroom) {
+        Optional<Techs> optBathroom = techsRepository.findById(id);
+        if (optBathroom.isPresent()) {
+            bathroom.setId(id);
+            return ResponseEntity.ok(techsRepository.save(bathroom));
         } else {
             return ResponseEntity.notFound().build();
         }

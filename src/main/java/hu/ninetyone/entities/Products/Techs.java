@@ -48,7 +48,11 @@ public class Techs implements Serializable {
     private String description;
 
     @Column(nullable = true)
-    private int rate;
+    private Integer voters;
+
+    @Column(nullable = true)
+    private Integer rate;
+
 
     @Column(nullable = false)
     private String type;
@@ -58,7 +62,13 @@ public class Techs implements Serializable {
 
     @Column
     @NotNull
-    private int price;
+    private Integer price;
+
+    @Column(nullable = true)
+    private Integer quantity;
+
+    @Column(nullable = true)
+    private Integer inCart;
 
     @Column
     @CreationTimestamp

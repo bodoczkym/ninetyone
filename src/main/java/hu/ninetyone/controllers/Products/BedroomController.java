@@ -79,12 +79,11 @@ public class BedroomController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Bedroom> update(@PathVariable Integer id,
-                                           @RequestBody Bedroom bedroom) {
-        System.out.println("DDDDD" + bedroom);
-        Optional<Bedroom> optBedroom = bedroomRepository.findById(id);
-        if (optBedroom.isPresent()) {
-            bedroom.setId(id);
-            return ResponseEntity.ok(bedroomRepository.save(bedroom));
+                                           @RequestBody Bedroom bathroom) {
+        Optional<Bedroom> optBathroom = bedroomRepository.findById(id);
+        if (optBathroom.isPresent()) {
+            bathroom.setId(id);
+            return ResponseEntity.ok(bedroomRepository.save(bathroom));
         } else {
             return ResponseEntity.notFound().build();
         }

@@ -71,11 +71,11 @@ public class LivingroomController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Livingroom> update(@PathVariable Integer id,
-                                          @RequestBody Livingroom living) {
-        Optional<Livingroom> optLiving = livingroomRepository.findById(id);
-        if (optLiving.isPresent()) {
-            living.setId(id);
-            return ResponseEntity.ok(livingroomRepository.save(living));
+                                           @RequestBody Livingroom bathroom) {
+        Optional<Livingroom> optBathroom = livingroomRepository.findById(id);
+        if (optBathroom.isPresent()) {
+            bathroom.setId(id);
+            return ResponseEntity.ok(livingroomRepository.save(bathroom));
         } else {
             return ResponseEntity.notFound().build();
         }
