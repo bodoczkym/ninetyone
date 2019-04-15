@@ -36,7 +36,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/h2/**", "/users/register", "/users", "/notes", "/jobs", "/questions", "/questions/comments",
                          "/bedroom", "/bedroom/*", "/living-room/*", "/living-room", "/kitchen", "/kitchen/*",
-                        "/bathroom", "/bathroom/*", "/techs", "/techs/*", "/purchases", "/purchases/*").permitAll()   // important!
+                        "/bathroom", "/bathroom/*", "/techs", "/techs/*", "/purchases", "/purchases/*", "/sold").permitAll()   // important!
                 .anyRequest().authenticated() //at kell irni authenticated()-re
                 .and()
                 .httpBasic()

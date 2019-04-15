@@ -1,9 +1,5 @@
-package hu.ninetyone.entities.Products;
+package hu.ninetyone.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.Nullable;
-import hu.ninetyone.entities.Category;
-import hu.ninetyone.entities.Purchase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,28 +8,32 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Bathroom implements Serializable {
+public class Sold implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    /* USER THINGS */
     @Column(nullable = false)
-    private String name;
+    private Integer userId;
 
-    @Column(unique = true, nullable = false)
-    private Integer stocknumber;
+    /* PRODUCT THINGS */
+    @Column(nullable = false)
+    private Integer productId;
+
+    @Column(nullable = false)
+    private String productName;
+
+    @Column(nullable = false)
+    private Integer stockNumber;
 
     @Column(nullable = false)
     private String filters;
@@ -47,36 +47,21 @@ public class Bathroom implements Serializable {
     @Column(nullable = true)
     private Integer rate;
 
-
     @Column(nullable = false)
     private String type;
 
     @Column(nullable = true)
     private String img;
 
-    @Column
-    @NotNull
+    @Column(nullable = false)
     private Integer price;
 
+    /* SOLD THINGS */
     @Column(nullable = true)
-    private Integer quantity;
-
-    @Column(nullable = true)
-    private Integer inCart;
-
-    @Column
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column
+    @Column(nullable = true)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
-    @ManyToOne
-    @JoinColumn
-    @JsonIgnore
-    private Category category;//!!!INFO:itt es a Category mapjeben ugyanannak kell szerepelni
-
-
-
 }

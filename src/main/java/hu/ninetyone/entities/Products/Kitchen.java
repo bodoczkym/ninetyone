@@ -71,11 +71,11 @@ public class Kitchen implements Serializable {
 
     @Column
     @CreationTimestamp
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
     @Column
     @UpdateTimestamp
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 
     @ManyToOne
     @JoinColumn
