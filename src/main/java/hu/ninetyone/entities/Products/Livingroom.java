@@ -2,6 +2,7 @@ package hu.ninetyone.entities.Products;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import hu.ninetyone.entities.Category;
+import hu.ninetyone.entities.Feedback;
 import hu.ninetyone.entities.Purchase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -83,5 +84,8 @@ public class Livingroom implements Serializable {
     @JsonIgnore
     private Category category;
 
+    @OneToMany(mappedBy = "livingroom")
+    @JsonIgnore
+    private List<Feedback> feedback;
 
 }

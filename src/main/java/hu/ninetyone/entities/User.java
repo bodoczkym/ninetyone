@@ -59,4 +59,8 @@ public class User implements Serializable {
 
         @Column(nullable = false)
         private Boolean emailVerified = false;
+
+        @OneToMany(mappedBy = "user")
+        @JsonIgnore
+        private List<Feedback> feedback;
 }
